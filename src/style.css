@@ -1,0 +1,143 @@
+/*colors*/
+:root{
+--blush-pink: #F4C6C6;
+  --soft-rose: #E8AFAF;
+  --strawberry-cream: #FADADD;
+
+  --vanilla-cream: #FFF4D6;
+  --butter-yellow: #F7E6A1;
+
+  --warm-beige: #E8D5BE;
+  --latte-beige: #D6BFA8;
+
+  --mocha-brown: #9B7661;
+  --espresso-brown: #5F4638;
+
+  --warm-white: #FFFDF8;
+}
+/*general page*/
+*{
+  box-sizing: border-box;
+}
+body{
+  margin:0;
+  background-color: var(--warm-white);
+  color: var(--espresso-brown);
+  font-family: 'Poppins', sans-serif;
+}
+button,
+input {
+  font: inherit;
+}
+/*header*/
+header{
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--strawberry-cream);
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--espresso-brown);
+}
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--espresso-brown);
+}
+/*main content*/
+main{
+  width:90%;
+  max-width: 1000px;
+  margin:40px auto;
+}
+/*search*/
+.search-section{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.search-section input{
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 10px;
+  border: 1px solid var(--latte-beige);
+  border-radius: 20px;
+  background-color: white;
+  color: var(--espresso-brown);
+  outline: none;
+}
+.search-section button {
+  max-width: 100px;
+  max-height: 40px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--espresso-brown);
+  color: var(--warm-white);
+  cursor: pointer;
+}
+/*filters*/
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 40px;
+}
+.filters button{
+  padding: 10px 20px;
+  border: 1px solid var(--latte-beige);
+  border-radius: 20px;
+  background-color: var(--vanilla-cream);
+  color: var(--espresso-brown);
+  cursor: pointer;
+}
+.results h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+}
+/*cafe card*/
+.cafe-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid var(--warm-beige);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(95,70,56,0.1);
+}
+.cafe-card h3 {
+  margin-top: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+}
+.cafe-card p {
+  margin: 8px 0;
+}
+/*hover effect*/
+button {
+  transition: 0.2s;
+}
+button:hover {
+  transform: translateY(-2px);
+}
+.search-section button:hover {
+  background-color: var(--mocha-brown);
+}
+.filters button:hover {
+  background-color: var(--butter-yellow);
+}
+/*responsiveness for mobile*/
+@media(max-width: 600px){
+  header h1 {
+    font-size: 2.3rem;
+  }
+  .search-section{
+    flex-direction: column;
+    align-items: center;
+  }
+  .search-section button{
+    width: 100%;
+  }
+}

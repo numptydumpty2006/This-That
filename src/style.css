@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&display=swap');
 /*colors*/
 :root{
 --blush-pink: #F4C6C6;
@@ -14,35 +15,98 @@
   --espresso-brown: #5F4638;
 
   --warm-white: #FFFDF8;
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Poppins', sans-serif;
 }
 /*general page*/
 *{
   box-sizing: border-box;
 }
+header.site-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--strawberry-cream);
+  border-bottom: 3px solid var(--soft-rose);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark {
+  width: 50px;
+  height: 50px;
+  color: var(--mocha-brown);
+  flex-shrink: 0;
+}
+.logo-text h1{
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--espresso-brown);
+}
+.logo-text h1 .amp {
+  color: var(--soft-rose);
+  font-style: italic;
+  margin: 0 .01em;
+}
+.logo-text p{
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--mocha-brown);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
 body{
   margin:0;
   background-color: var(--warm-white);
   color: var(--espresso-brown);
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
+  background-image: repeating-linear-gradient(0deg, rgba(231, 175, 175, .1) 0 20px, transparent 20px 40px),
+                    repeating-linear-gradient(90deg, rgba(231, 175, 175, .1) 0 20px, transparent 20px 40px);
+  background-attachment: fixed;
 }
 button,
 input {
   font: inherit;
 }
 /*header*/
+header .logo-mark {
+  width: 75px;
+  height: 75px;
+  color: var(--mocha-brown);
+  display: block;
+  margin: 0 auto;
+}
 header{
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   background-color: var(--strawberry-cream);
+  background-image: repeating-linear-gradient(0deg, rgba(231, 175, 175, .25) 0 20px, transparent 20p x 40px),
+                    repeating-linear-gradient(90deg, rgba(231, 175, 175, .25) 0 20px, transparent 20px 40px);
 }
 header h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  letter-spacing: -1px;
+  font-weight: 400;
+  font-family: var(--font-heading);
   color: var(--espresso-brown);
+}
+header h1 .amp {
+color: var(--mocha-brown);
+font-style: italic;
+margin: 0 .01em;
 }
 header p {
   margin-top: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--espresso-brown);
 }
 /*main content*/
@@ -50,33 +114,41 @@ main{
   width:90%;
   max-width: 1000px;
   margin:40px auto;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--warm-beige);
+  border-radius: 20px;
 }
 /*search*/
 .search-section{
   display: flex;
   justify-content: center;
   gap: 10px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 .search-section input{
   width: 100%;
-  max-width: 300px;
-  padding: 10px 10px;
+  padding: 10px 14px;
   border: 1px solid var(--latte-beige);
   border-radius: 20px;
   background-color: white;
   color: var(--espresso-brown);
   outline: none;
 }
+.search-section input:focus{
+  border-color: var(--soft-rose);
+}
 .search-section button {
-  max-width: 100px;
-  max-height: 40px;
-  padding: 10px 10px;
+  padding: 10px 20px;
   border: none;
   border-radius: 20px;
   background-color: var(--espresso-brown);
   color: var(--warm-white);
   cursor: pointer;
+  white-space: nowrap;
 }
+
 /*filters*/
 .filters {
   display: flex;
@@ -93,23 +165,42 @@ main{
   color: var(--espresso-brown);
   cursor: pointer;
 }
-.results h2{
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
+.filters button.active{
+  background-color: var(--soft-rose);
+  border-color: var(--soft-rose);
 }
+
+/*results*/
+.results h2{
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.cafe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
 /*cafe card*/
 .cafe-card {
   width: 100%;
-  max-width: 400px;
   padding: 20px;
   background-color: white;
   border: 1px solid var(--warm-beige);
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(95,70,56,0.1);
+  transition: transform .2s, box-shadow .2s;
+}
+.cafe-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(95,70,56,0.20);
 }
 .cafe-card h3 {
   margin-top: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-heading);
+  font-weight: 400;
   font-size: 1.5rem;
 }
 .cafe-card p {
@@ -128,10 +219,10 @@ button:hover {
 .filters button:hover {
   background-color: var(--butter-yellow);
 }
-/*responsiveness for mobile*/
+/*responsiveness*/
 @media(max-width: 600px){
   header h1 {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
   .search-section{
     flex-direction: column;
